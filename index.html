@@ -164,19 +164,41 @@
     // });
 
     document.addEventListener("click", function(e){
-        if(e.target.className == "nav-button"){
-            if(e.target.textContent == "Family Tree"){
-                document.getElementById("family-tree").style.display = "block";
-                document.getElementById("map").style.display = "none";
-                document.getElementById("family-history").style.display = "none";
-            } else if (e.target.textContent == "Map"){
-                document.getElementById("family-tree").style.display = "none";
-                document.getElementById("map").style.display = "block";
-                document.getElementById("family-history").style.display = "none";
+        for(let i = 0; i < document.getElementsByClassName("nav-button").length; i++){
+            document.getElementsByClassName("nav-button")[i].style.color = "black";
+        }
+        if(e.target.classList.contains("nav-button")){
+            if(e.target.classList.contains("active")){
+                e.target.classList.remove("active")
+                e.target.style.color = "black";
+                if(e.target.textContent == "Family Tree"){
+                    document.getElementById("family-tree").style.display = "none";
+                } else if (e.target.textContent == "Map"){
+                    document.getElementById("map").style.display = "none";
+                } else {
+                    document.getElementById("family-history").style.display = "none";
+                }
             } else {
-                document.getElementById("family-tree").style.display = "none";
-                document.getElementById("map").style.display = "none";
-                document.getElementById("family-history").style.display = "block";
+                for(let i = 0; i < document.getElementsByClassName("nav-button").length; i++){
+                    if(document.getElementsByClassName("nav-button")[i].classList.contains("active")){
+                        document.getElementsByClassName("nav-button")[i].classList.remove("active");
+                    }
+                }
+                e.target.classList.add("active");
+                e.target.style.color = "blue";
+                if(e.target.textContent == "Family Tree"){
+                    document.getElementById("family-tree").style.display = "block";
+                    document.getElementById("map").style.display = "none";
+                    document.getElementById("family-history").style.display = "none";
+                } else if (e.target.textContent == "Map"){
+                    document.getElementById("family-tree").style.display = "none";
+                    document.getElementById("map").style.display = "block";
+                    document.getElementById("family-history").style.display = "none";
+                } else {
+                    document.getElementById("family-tree").style.display = "none";
+                    document.getElementById("map").style.display = "none";
+                    document.getElementById("family-history").style.display = "block";
+                }
             }
         }
     })
