@@ -62,8 +62,11 @@
 } */
 @media only screen and (max-device-width: 667px) 
     and (-webkit-device-pixel-ratio: 2) {
+      h1 {
+        font-size: 100px;
+      }
       .nav-button {
-        font-size: x-large;
+        font-size: 75px;
       }
     }
 
