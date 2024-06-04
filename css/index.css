@@ -3,6 +3,11 @@
     color: black;
 }
 
+.plus-signs {
+  position: absolute;
+  right: 200px;
+}
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
@@ -36,18 +41,34 @@
   }
 
   /* iphone 5 */
-/* @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #nav-buttons {
-      display: grid;
+@media only screen 
+  and (min-width: 950px) 
+  and (max-width: 1200px) {
+    .plus-signs {
+      position: absolute;
+      right: 175px;
     }
-    .nav-button {
-      font-size: x-large;
-      margin: 5px;
+}
+
+  /* iphone 5 */
+  @media only screen 
+  and (min-width: 800px) 
+  and (max-width: 950px) {
+    .plus-signs {
+      position: absolute;
+      right: 150px;
     }
-} */
+}
+
+  /* iphone 5 */
+  @media only screen 
+  and (min-width: 600px) 
+  and (max-width: 850px) {
+    .plus-signs {
+      position: absolute;
+      right: 125px;
+    }
+}
 
 /* @media screen and (min-width: 100px) and (max-width: 800px) { */
   /* #nav-buttons {
@@ -61,6 +82,14 @@
     color: blue;
   }
 } */
+@media only screen and (max-device-width: 1200px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      .plus-signs {
+        position: absolute;
+        right: 175px;
+      }
+    }
+
 @media only screen and (max-device-width: 667px) 
     and (-webkit-device-pixel-ratio: 2) {
       h1 {
