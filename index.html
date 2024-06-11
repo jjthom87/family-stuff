@@ -212,10 +212,18 @@
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
-                content.previousElementSibling.children[0].textContent = ">"
+                if(content.nextElementSibling){
+                    content.previousElementSibling.children[0].textContent = ">"
+                } else {
+                    this.children[1].textContent = ">"
+                }
             } else {
                 content.style.display = "block";
-                content.previousElementSibling.children[0].textContent = "V"
+                if(content.nextElementSibling){
+                    content.previousElementSibling.children[0].textContent = "V"
+                } else {
+                    this.children[1].textContent = "V"
+                }
             }
         });
     }
