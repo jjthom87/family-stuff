@@ -40,6 +40,11 @@
     margin: 16px 0px 0px -20px;
   }
 
+  .tpos-section-ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   /* iphone 5 */
 @media only screen 
   and (min-width: 950px) 
@@ -97,6 +102,9 @@
       }
       .nav-button {
         font-size: 75px;
+      }
+      .section-collapsibles {
+        font-size: 25px;
       }
     }
 
