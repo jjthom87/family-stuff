@@ -1,0 +1,123 @@
+.nav-button {
+    margin: 5px;
+    color: black;
+}
+
+.plus-signs {
+  position: absolute;
+  right: 175px;
+}
+
+.larger-p {
+  font-size: 30px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 25px;
+    margin: 5px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+  .collapsible-symbol {
+    position: absolute;
+    margin: 16px 0px 0px -20px;
+  }
+
+  .tpos-section-ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+
+  /* iphone 5 */
+@media only screen 
+  and (min-width: 950px) 
+  and (max-width: 1200px) {
+    .plus-signs {
+      position: absolute;
+      right: 175px;
+    }
+}
+
+  /* iphone 5 */
+  @media only screen 
+  and (min-width: 800px) 
+  and (max-width: 950px) {
+    .plus-signs {
+      position: absolute;
+      right: 150px;
+    }
+}
+
+  /* iphone 5 */
+  @media only screen 
+  and (min-width: 600px) 
+  and (max-width: 850px) {
+    .plus-signs {
+      position: absolute;
+      right: 120px;
+    }
+}
+
+/* @media screen and (min-width: 100px) and (max-width: 800px) {
+  #nav-buttons {
+    
+  }
+  .nav-button {
+    width: 100px;
+    max-width: 100%;
+  }
+   h1 {
+    color: blue;
+  }
+} */
+@media only screen and (max-device-width: 1200px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      .plus-signs {
+        position: absolute;
+        right: 80px;
+      }
+      #map {
+        height: 1250px;
+      }
+    }
+
+@media only screen and (max-device-width: 667px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      h1 {
+        font-size: 100px;
+      }
+      .nav-button {
+        font-size: 75px;
+      }
+
+      #download-pdf-button {
+        font-size: 50px;
+        margin-bottom: 50px;
+        margin-top: -40px;
+      }
+    }
+
+    @media screen and (min-device-width : 414px) 
+    and (-webkit-device-pixel-ratio: 3) {}

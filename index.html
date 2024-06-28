@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Tomashefsky Family History</title>
-        <link rel="stylesheet" href="./ancestry-app/index.css">
+        <link rel="stylesheet" href="./index.css">
         <!-- <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/> -->
     </head>
     <body>
@@ -11,6 +11,9 @@
             </div>
         </a>
         <h1 style="text-align: center; margin-top: 5px;">Tomashefsky Family History</h1>
+        <div style="display: flex; justify-content: center;">
+            <button id="download-pdf-button">Download PDF</button>
+        </div>
         <div style="display: flex; justify-content: center;" id="nav-buttons">
             <button class="nav-button">Family Tree</button>
             <button class="nav-button">Family History</button>
@@ -18,7 +21,7 @@
         </div>
         <div style="text-align: center; display: none;" id="family-tree">
             <h2>FAMILY Tree of Jacob Tomashefsky/Jack Thomas & Adeline Ethel Lam</h2>
-            <img src="./ancestry-app/images/family_tree.jpg" alt="">
+            <img src="./images/family_tree.jpg" alt="">
         </div>
         <div style="text-align: center; display: none;" id="family-history">
             <h2>Family History</h2>
@@ -26,7 +29,7 @@
             <button type="button" class="collapsible">Great Grandparents<span class="plus-signs">></span></button>
             <!-- <span class="collapsible-symbol">+</span> -->
             <div class="content">
-              <img src="./ancestry-app/images/great_grandparents.jpg" alt="">
+              <img src="./images/great_grandparents.jpg" alt="">
             </div>
 
             <button type="button" class="collapsible">Where do we come from?<span class="plus-signs">></span></button>
@@ -60,7 +63,7 @@
               <p class="larger-p">From what we know the rest of the family emigrated to Buenos Aires, Argentina, except for we were told, 1 sister, Pessa Seltser.</p>
               <p class="larger-p">Their other siblings were Mordechai, Chiam 'Joseph', Mayer, Aron 'Adolph' & Julio Wechsler.</p>
               <p class="larger-p">Their father Abraham had an older brother Yankel Wechsler (1860) who was married twice and we have a picture of their parents (Our GGGrandparents) Papa Wechsler & Laika 'Leah'.</p>
-              <img src="./ancestry-app/images/great-great-grandparents.jpg" alt="">
+              <img src="./images/great-great-grandparents.jpg" alt="">
               <p class="larger-p">With Yankel's wife Chana, they had a son Shaya who’s son Zisa played violin for the Tsar's army and he had a son Harry who was an accomplished violinist.</p>
               <p class="larger-p">With Yankel's wife Kaila around 1800, their children were Channa, Surra, Yussel, Herschel and Leah. Channa married a Suberech, Leah married a Weinshenke and Surra married a Rabinowitz and had a child Meyer.</p>
             </div>
@@ -195,7 +198,7 @@
             
         </div>
         <div style="text-align: center; display: none;" id="map">
-            <img id="map" src="./ancestry-app/images/map.jpg" alt="">
+            <img id="map" src="./images/map.jpg" alt="">
         </div>
         <!-- <div style="width:100%; height:700px;" id="tree"></div> -->
     </body>
@@ -251,6 +254,14 @@
                     document.getElementById("family-history").style.display = "block";
                 }
             }
+        } else if (e.target.id == "download-pdf-button"){
+            fetch("/download-pdf")
+		    .then((response) => {
+                let downloadWindow = window.open("http://localhost:3000/api/download-pdf")
+                setTimeout(() => {
+                    downloadWindow.close()
+                },10000)
+		    });
         }
     })
 
